@@ -1,1 +1,18 @@
-<p>articles works!</p>
+<div *ngIf="loading">
+    <app-loader></app-loader>
+</div>
+
+<div class="container_posts" [ngClass]="{ 'content-ready': !loading}">
+    <div class="container-posts__social-posts">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7220029503522111488" height="595"
+            width="704" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+    </div>
+    <div class="container-posts__social-posts">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7218982687817052160" height="381"
+            width="704" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+    </div>
+    <div class="container-posts__social-posts">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7095129851514281985" height="564"
+            width="704" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+    </div>
+</div>
