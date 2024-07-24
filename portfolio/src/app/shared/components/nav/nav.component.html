@@ -1,13 +1,22 @@
-<ul>
+<ul class="topnav" id="myTopnav">
     <li><a class="home nav-item" routerLink="/home" [routerLinkActive]="['active']">Home</a></li>
     <li><a class="techprofile nav-item" routerLink="/techprofile" [routerLinkActive]="['active']">Profile</a></li>
     <li><a class="showcasework nav-item" routerLink="/showcasework" [routerLinkActive]="['active']">Showcase</a></li>
-    <li style="float:right"><a class="home nav-item" routerLink="/blog" [routerLinkActive]="['active']">Blog</a></li>
-    <li style="float:right"><a class="showcasework nav-item" (click)="downloadResume()">
+    <li class="nav-right"><a class="home nav-item" routerLink="/blog" [routerLinkActive]="['active']">Blog</a></li>
+    <li class="nav-right download-resume">
+        <a class="showcasework nav-item" (click)="downloadResume()">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="4 0 16 16" width="16" height="16">
-                <!-- Arrow -->
+
                 <path d="M12 15l-5-5h3V4h4v6h3z" fill="#ffffff" />
             </svg>
-        </a></li>
+        </a>
+    </li>
+    <li class="responsive-download-resume"><a href="javascript:void(0);" (click)="downloadResume()">Download Resume</a>
+    </li>
+    <li class="icon">
+        <a href="javascript:void(0);" (click)="toggleTopNav()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </li>
 
 </ul>

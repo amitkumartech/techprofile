@@ -1,28 +1,94 @@
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
 
 li {
-    float: left;
+  float: left;
+}
+
+.nav-right {
+  float: right;
 }
 
 li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 li a:hover:not(.active) {
-    background-color: #111;
+  background-color: #111;
 }
 
 .active {
-    background-color: rgb(0, 122, 204);
-    ;
+  background-color: rgb(0, 122, 204);
+}
+
+.icon {
+  display: none;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.responsive-download-resume {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav li:not(:first-child) {
+    display: none;
+    float: left;
+  }
+
+  .topnav li.icon {
+    float: right;
+    display: block;
+  }
+
+  li,
+  .nav-right {
+    float: none;
+
+    a {
+      text-align: left;
+    }
+  }
+
+  .topnav li:first-child {
+    float: left;
+  }
+
+  .topnav.responsive li {
+    float: none;
+    display: block;
+    transition: opacity 0.5s ease-in-out;
+    text-align: left;
+
+    &.download-resume {
+      display: none;
+    }
+  }
+
+  .responsive-download-resume {
+    display: block;
+  }
 }
