@@ -1,0 +1,187 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+
+    @media (max-width: 768px) {
+        width: 100%;
+
+    }
+
+    &__github-profile-overview,
+    &__skills,
+    &__top-skills {
+        border: none;
+
+        .card {
+            margin-top: 40px;
+            border: none;
+            // border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            span {
+                display: block;
+                width: 300px;
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
+
+                // width: 100%;
+                // background-color: rgb(0, 122, 204);
+                background-color: rgb(101, 100, 100);
+
+                /* Bootstrap primary color */
+                color: #fff;
+                padding: 5px 5px 5px 5px;
+                box-sizing: border-box;
+            }
+
+
+        }
+    }
+}
+
+
+
+ul {
+    list-style-type: none;
+}
+
+
+
+.container__overview {
+    &__bio {
+        background-color: #ffffff;
+        color: rgb(0, 122, 204);
+    }
+}
+
+.card-title {
+    font-size: 24px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+
+/* app.component.css */
+.percentage-text {
+    font-size: 24px;
+    /* Adjust font size as needed */
+    color: #007bff;
+    /* Custom color */
+    margin-top: 10px;
+    /* Add spacing between icon and percentage text */
+}
+
+/* app.component.css */
+.responsive-list {
+    list-style-type: none;
+    /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* Use flexbox for horizontal layout */
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next line */
+}
+
+.responsive-list li {
+    flex-basis: calc(33.33% - 20px);
+    /* Adjust item width; 20px is for padding */
+    max-width: calc(33.33% - 20px);
+    /* Ensure max width to control responsiveness */
+    text-align: left;
+    /* Center align text */
+    padding: 5px;
+    /* Add padding for spacing between items */
+    // margin: 10px; /* Add margin for spacing around items */
+    // border: 1px solid #ccc; /* Example border for visual separation */
+    // background-color: #f0f0f0; /* Example background color */
+    // box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: .5s ease-out;
+    cursor: default;
+
+    &:hover {
+        transform: translateY(-0.25rem);
+        // box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .responsive-list li {
+        flex-basis: calc(50% - 20px);
+        /* Two items per row on smaller screens */
+        max-width: calc(50% - 20px);
+        /* Ensure max width to control responsiveness */
+    }
+}
+
+@media (max-width: 480px) {
+    .responsive-list li {
+        flex-basis: 100%;
+        /* One item per row on mobile screens */
+        max-width: 100%;
+        /* Ensure max width to control responsiveness */
+    }
+}
+
+
+.key-highlights {
+    padding: 50px 0;
+    // background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.highlight-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    // border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.highlight-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.highlight-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.skills {
+    &__skill-item {
+        display: inline-block;
+        background-color: rgb(0, 122, 204);
+        box-sizing: border-box;
+        margin: 5px;
+        padding: 5px;
+        color: #fff;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: .5s ease-out;
+        cursor: default;
+    }
+
+    &__skill-item:hover {
+        transform: translateY(-0.25rem);
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    }
+}

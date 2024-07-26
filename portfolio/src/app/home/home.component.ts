@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { urls } from '../shared/constants';
 
 @Component({
   selector: 'app-home',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   title = 'Amit Kumar';
+  linkedin = urls.linkedin;
+  github = urls.github;
 }

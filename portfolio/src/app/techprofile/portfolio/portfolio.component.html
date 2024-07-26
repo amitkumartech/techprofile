@@ -1,1 +1,86 @@
-<p>portfolio works!</p>
+<div class="container">
+    <h2>{{ profile.name }}</h2>
+
+    <div class="container__skills">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <span>Technical Expertise</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <span *ngFor="let skill of skills" class="skills">
+                        <span class="skills__skill-item">
+                            {{skill}}
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container__top-skills">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <span>Top Skills in Use</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div *ngIf="topLanguages.length > 0">
+                        <ul class="responsive-list">
+                            <li *ngFor="let lang of topLanguages">
+                                <i [ngClass]="['fas', getIconClass(lang.name), iconSizeClass]"
+                                    [style.color]="getIconColor(lang.name)"></i>
+                                {{ lang.name }}: {{ lang.percentage.toFixed(2) }}%
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container__github-profile-overview">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <span>GitHub Profile Overview</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <h4 class="container__overview__bio">{{ profile.bio }}</h4>
+                    <p>Public Repositories: {{ profile.public_repos }}</p>
+                    <p>
+                        <a href="{{ profile.html_url }}" target="_blank">
+                            View my GitHub profile
+                            <i [ngClass]="['fas', 'fab fa-github']" [style.color]="getIconColor('#e34c26')"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="key-highlights">
+        <div class="container">
+            <h2>Key Highlights</h2>
+            <div class="highlight-item">
+                <h3>Project Management</h3>
+                <p>Successfully led and delivered multiple projects within deadlines.</p>
+            </div>
+            <div class="highlight-item">
+                <h3>Technical Skills</h3>
+                <p>Proficient in Angular, TypeScript, HTML/CSS, and responsive web design.</p>
+            </div>
+            <div class="highlight-item">
+                <h3>Team Collaboration</h3>
+                <p>Effective communication and teamwork skills, contributing to a collaborative work environment.</p>
+            </div>
+        </div>
+    </section>
+
+</div>
