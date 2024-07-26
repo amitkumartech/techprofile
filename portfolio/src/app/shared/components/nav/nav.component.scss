@@ -1,3 +1,9 @@
+@import url(./../../styles/animations.scss);
+
+#myTopnav {
+  animation: fadeIn 1s ease 0s 1 normal forwards;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
