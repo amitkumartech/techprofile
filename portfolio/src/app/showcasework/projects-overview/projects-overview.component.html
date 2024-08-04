@@ -12,11 +12,11 @@
       <div class="accordion-content" [ngClass]="{'open': project.isOpen}">
         <h4 class="role"><strong>Role:</strong> {{ project.role }}</h4>
         <h4 class="technologies"><strong>Technologies Used:</strong> {{ project.technologies }}</h4>
-        <p class="description">{{ project.description }}</p>
+        <p class="description" [innerHTML]="project.description | highlight:searchTerms:'lightyellow'"></p>
         <div class="contributions">
           <h4>Key Contributions:</h4>
           <ul>
-            <li *ngFor="let contribution of project.contributions">{{ contribution }}</li>
+            <li *ngFor="let contribution of project.contributions" [innerHTML]="contribution | highlight:searchTerms:'lightyellow'"></li>
           </ul>
         </div>
       </div>

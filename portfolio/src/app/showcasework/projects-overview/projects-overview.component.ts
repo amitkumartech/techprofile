@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { skills } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-projects-overview',
@@ -50,7 +51,7 @@ export class ProjectsOverviewComponent implements OnInit {
       isOpen: false
     }
   ];
-
+  searchTerms: string[] = skills.split(', '); // Array of terms
   ngOnInit(): void {
     // Ensure the first project is open by default
     if (this.projects.length > 0) {
