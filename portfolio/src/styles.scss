@@ -6,3 +6,28 @@ html,
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0px;
 }
+/* Custom scrollbar styles for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 8px; /* Thin scrollbar width */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #004b87; /* Thumb color (Facebook dark blue) */
+    border-radius: 10px; /* Rounded corners for the thumb */
+  }
+  
+  /* Optional: Add hover effect for scrollbar thumb */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #003d6b; /* Darker shade on hover */
+  }
+  
+  /* Custom scrollbar styles for Firefox */
+  * {
+    scrollbar-width: thin; /* Thin scrollbar width */
+    scrollbar-color: #004b87 #f1f1f1; /* Thumb color and track color */
+  }
+  
