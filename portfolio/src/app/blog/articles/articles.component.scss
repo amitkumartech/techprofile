@@ -15,3 +15,44 @@
     display: flex;
 }
 
+
+.loader {
+    width: 38px;
+    height: 38px;
+    display: block;
+    margin: 0 auto;
+    animation: rotate 2s linear infinite;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.loader-circle {
+    stroke: #3498db;
+    stroke-dasharray: 75.4;
+    stroke-dashoffset: 75.4;
+    animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset:
+            75.4;
+    }
+
+    50% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: 75.4;
+    }
+}
+

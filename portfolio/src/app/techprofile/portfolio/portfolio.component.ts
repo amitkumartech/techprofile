@@ -8,6 +8,7 @@ import { GithubService } from 'src/app/shared/services/github.service';
   styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent {
+  loader = true;
   profile: any;
   topLanguages: { name: string, percentage: number }[] = [];
   languageIcons: { [key: string]: string } = {
@@ -30,6 +31,10 @@ export class PortfolioComponent {
   constructor(private githubService: GithubService) { }
   skills = skills.split(', ');
   ngOnInit(): void {
+    // Simulate loading delay (e.g., HTTP request or setTimeout)
+    setTimeout(() => {
+      this.loader = false; // Set loading to false when content is loaded
+    }, 1000); // Replace with actual loading logic
     this.githubService.getGithubProfile().subscribe(data => {
       this.profile = data;
     });
