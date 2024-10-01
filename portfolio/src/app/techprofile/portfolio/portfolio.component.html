@@ -1,14 +1,11 @@
 <div *ngIf="loader">
-
     <svg class="loader" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
         <circle class="loader-circle" cx="19" cy="19" r="18" stroke-width="2" fill="none" stroke-linecap="round">
         </circle>
     </svg>
 </div>
 
-
 <div class="container" *ngIf="!loader">
-    <h2>{{ profile.name }}</h2>
 
     <div class="container__skills">
         <div class="card">
@@ -73,23 +70,5 @@
             </div>
         </div>
     </div>
-
-    <section class="key-highlights">
-        <div class="container">
-            <h2>Key Highlights</h2>
-            <div class="highlight-item">
-                <h3>Project Management</h3>
-                <p>Successfully led and delivered multiple projects within deadlines.</p>
-            </div>
-            <div class="highlight-item">
-                <h3>Technical Skills</h3>
-                <p>Proficient in Angular, TypeScript, HTML/CSS, and responsive web design.</p>
-            </div>
-            <div class="highlight-item">
-                <h3>Team Collaboration</h3>
-                <p>Effective communication and teamwork skills, contributing to a collaborative work environment.</p>
-            </div>
-        </div>
-    </section>
 
 </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { forkJoin } from 'rxjs';
 import { skills } from 'src/app/shared/constants';
 import { GithubService } from 'src/app/shared/services/github.service';
 
@@ -8,7 +9,7 @@ import { GithubService } from 'src/app/shared/services/github.service';
   styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent {
-  loader = true;
+  loader = false;
   profile: any;
   topLanguages: { name: string, percentage: number }[] = [];
   languageIcons: { [key: string]: string } = {
@@ -28,51 +29,67 @@ export class PortfolioComponent {
     // Add more color mappings as needed
   };
   iconSizeClass = 'fa-2x'; // FontAwesome size class (3x for example)
-  constructor(private githubService: GithubService) { }
   skills = skills.split(', ');
+  constructor(private githubService: GithubService) { }
+
   ngOnInit(): void {
-    // Simulate loading delay (e.g., HTTP request or setTimeout)
-    setTimeout(() => {
-      this.loader = false; // Set loading to false when content is loaded
-    }, 1000); // Replace with actual loading logic
-    this.githubService.getGithubProfile().subscribe(data => {
-      this.profile = data;
-    });
-
-    this.githubService.getRepositories().subscribe(repos => {
-      // Calculate top languages
-      const languages: { [key: string]: number } = {};
-      // Calculate total lines of code across all languages
-      let totalLinesOfCode = 0;
-      repos.forEach(repo => {
-        if (repo.language && repo.size) {
-          if (languages[repo.language]) {
-            languages[repo.language] += repo.size;
-          } else {
-            languages[repo.language] = repo.size;
-          }
-          totalLinesOfCode += repo.size;
-        }
-      });
-
-
-      // Calculate percentages
-      this.topLanguages = Object.keys(languages).map(key => ({
-        name: key,
-        percentage: (languages[key] / totalLinesOfCode) * 100
-      }));
-      // Sort languages by percentage (descending)
-      this.topLanguages.sort((a, b) => b.percentage - a.percentage);
-      // Convert languages object to array for sorting
-      // this.topLanguages = Object.keys(languages).map(key => ({ name: key, value: languages[key] }));
-      // Sort languages by value (descending)
-      this.topLanguages.sort((a, b) => b.percentage - a.percentage);
-    });
+    this.GetGithubData();
   }
+
   getIconClass(language: string): string {
     return this.languageIcons[language] || 'fab fa-code'; // Default icon if not mapped
   }
+
   getIconColor(language: string): string {
     return this.languageColors[language] || '#333'; // Default color if not mapped
+  }
+
+  GetGithubData() {
+    this.loader = true;
+    // Use RxJS forkJoin to combine the API calls
+    forkJoin([
+      this.githubService.getGithubProfile(),
+      this.githubService.getRepositories()
+    ]).subscribe(
+      ([response1, response2]) => {
+        this.profile = response1;
+        this.analyseRepoResponse(response2);
+        this.loader = false; // Hide loader when both responses are successful
+      },
+      error => {
+        console.error('Error:', error);
+        this.loader = false; // Hide loader even on error
+      }
+    );
+  }
+
+  analyseRepoResponse(repos: any) {
+    // Calculate top languages
+    const languages: { [key: string]: number } = {};
+    // Calculate total lines of code across all languages
+    let totalLinesOfCode = 0;
+    repos.forEach((repo: any) => {
+      if (repo.language && repo.size) {
+        if (languages[repo.language]) {
+          languages[repo.language] += repo.size;
+        } else {
+          languages[repo.language] = repo.size;
+        }
+        totalLinesOfCode += repo.size;
+      }
+    });
+
+
+    // Calculate percentages
+    this.topLanguages = Object.keys(languages).map(key => ({
+      name: key,
+      percentage: (languages[key] / totalLinesOfCode) * 100
+    }));
+    // Sort languages by percentage (descending)
+    this.topLanguages.sort((a, b) => b.percentage - a.percentage);
+    // Convert languages object to array for sorting
+    // this.topLanguages = Object.keys(languages).map(key => ({ name: key, value: languages[key] }));
+    // Sort languages by value (descending)
+    this.topLanguages.sort((a, b) => b.percentage - a.percentage);
   }
 }
