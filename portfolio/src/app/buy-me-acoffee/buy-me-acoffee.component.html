@@ -13,12 +13,12 @@
         </ng-template>
       </div>
 
-      <button *ngIf="!showQrCode" class="buy-coffee-button" (click)="showQrCode = !showQrCode; scrollToBottom()" id="buy-coffee">
+      <button *ngIf="!showQrCode" class="buy-coffee-button" (click)="showQrCode = !showQrCode;" id="buy-coffee">
         Buy Me a Coffee
       </button>
       <div *ngIf="showQrCode" class="qr-code-container">
         <img src="assets/coffee.png" alt="Coffee Image" class="qr-code coffee" />
-        <img src="assets/buy-me-a-coffee-qr-scanner.png" alt="UPI QR Code" class="qr-code" />
+        <img src="assets/buy-me-a-coffee-qr-scanner.png" (load)="scrollToBottom()" alt="UPI QR Code" class="qr-code" />
       </div>
     </div>
 
