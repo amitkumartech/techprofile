@@ -6,7 +6,7 @@
     </svg>
 </div>
 
-<div class="container_posts" *ngIf="!loader">
+<div class="container_posts" *ngIf="!loader" [ngClass]="{'content-ready': !loader}">
     <div class="container-posts__social-posts">
         <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7220029503522111488" height="595"
             width="704" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>

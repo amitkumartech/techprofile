@@ -1,0 +1,143 @@
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  transition: height 0.5s ease, padding 0.5s ease;
+  /* Smooth transition */
+  /* Adjust height as needed */
+  // background-color: #6f60ae;
+  border-radius: 10px;
+
+  position: relative;
+  overflow: hidden;
+
+
+
+  @media (max-width: 600px) {
+    display: block;
+  }
+}
+
+.contain {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.animated-text p {
+  // font-family: 'Courier New', Courier, monospace;
+  /* Adjust font size as needed */
+  color: #4f087c;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+  text-align: justify;
+  /* Combined animations */
+}
+
+.buy-me-a-coffee-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center items horizontally */
+  padding: 20px;
+  // background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.text-and-qr-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* Full width */
+  max-width: 800px;
+  /* Adjust max width as needed */
+  margin-bottom: 20px;
+  /* Space between text/QR and button */
+}
+
+.qr-code-container {
+  flex: 0 0 auto;
+  /* Keep QR code size auto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  
+}
+
+.qr-code-container img {
+  width: 150px;
+  /* Set desired width for QR code */
+  height: 150px;
+  /* Set desired height for QR code */
+  // box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: height 0.5s ease, opacity 0.5s ease;
+
+  /* Smooth transition */
+  @media (max-width: 600px) {
+    width: 50%;
+    height: auto;
+  }
+
+}
+
+.buy-coffee-button {
+
+  background-color: #ffdd57;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  // border-radius: 5px;
+  cursor: pointer;
+  font-size: 10px;
+  transition: background-color 0.3s;
+  padding: 20px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+.buy-coffee-button:hover {
+  background-color: #ffc857;
+}
+
+@media (max-width: 600px) {
+
+  .qr-code-container {
+
+    display: inline;
+    /* Use flexbox for alignment */
+    justify-content: space-between;
+    /* Space out images */
+    width: 100%;
+    /* Full width of the container */
+  }
+
+  .qr-code {
+    width: 48%;
+    /* Each image takes up almost half of the container */
+    height: auto;
+    /* Maintain aspect ratio */
+  }
+
+  .coffee {
+    border: 10px solid transparent;
+    /* Create a solid border */
+    box-sizing: border-box;
+    /* Include padding and border in the box's total width and height */
+
+  }
+
+
+}
+
+@media (min-width: 600px) {
+  .coffee {
+    display: none;
+  }
+}

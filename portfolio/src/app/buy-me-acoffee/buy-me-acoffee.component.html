@@ -1,0 +1,27 @@
+<div class="buy-me-a-coffee-container">
+  <div class="text-and-qr-container">
+    <div class="text-container" [ngClass]="{'contain': !showQrCode}">
+      <div class="animated-text">
+        <p *ngIf="!showQrCode; else greatGoing"> Feed a hungry programmer! Every coffee helps avoid another midnight
+          coding crisis!😊</p>
+        <ng-template #greatGoing>
+          <p>
+            <!-- Thank you for fueling my code!  -->
+            Every ☕️ sip helps keep the bugs away and the creativity flowing!
+            If my code runs perfectly, I’ll owe you one—just don’t ask for a refund!😂
+          </p>
+        </ng-template>
+      </div>
+
+      <button *ngIf="!showQrCode" class="buy-coffee-button" (click)="showQrCode = !showQrCode; scrollToBottom()" id="buy-coffee">
+        Buy Me a Coffee
+      </button>
+      <div *ngIf="showQrCode" class="qr-code-container">
+        <img src="assets/coffee.png" alt="Coffee Image" class="qr-code coffee" />
+        <img src="assets/buy-me-a-coffee-qr-scanner.png" alt="UPI QR Code" class="qr-code" />
+      </div>
+    </div>
+
+  </div>
+
+</div>
