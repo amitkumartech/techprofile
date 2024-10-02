@@ -1,8 +1,16 @@
 <ul class="topnav" id="myTopnav">
+
     <li><a class="home nav-item" routerLink="/home" [routerLinkActive]="['active']">Home</a></li>
     <li><a class="techprofile nav-item" routerLink="/techprofile" [routerLinkActive]="['active']">Profile</a></li>
     <li><a class="showcasework nav-item" routerLink="/showcasework" [routerLinkActive]="['active']">Projects</a></li>
+    <!-- <li class="nav-right"><a class="home nav-item contact-me" (click)="contactMe()">Contact me</a></li> -->
+    <li class="nav-right download-resume" style="width: 75px; margin-right: 10px;">
+        <a href="javascript:void(0);" class="contact-icon" (click)="closeDrawer()">
+            <i class="custom-icon" [ngClass]="['fas', 'fa-address-book']" [style.color]="'#038cfc'"></i>
+        </a>
+    </li>
     <li class="nav-right"><a class="home nav-item" routerLink="/blog" [routerLinkActive]="['active']">Blog</a></li>
+
     <li class="nav-right download-resume">
         <a class="showcasework nav-item" (click)="downloadResume()">
             Download Resume
@@ -10,6 +18,13 @@
 
                 <path d="M12 15l-5-5h3V4h4v6h3z" fill="#ffffff" />
             </svg>
+        </a>
+    </li>
+    <li class="responsive-download-resume">
+        <a href="#">
+            <!-- <i class="custom-icon" [ngClass]="['fas', 'fa-address-book']" [style.color]="'#038cfc'"
+                (click)="closeDrawer()"></i> -->
+            <span (click)="closeDrawer()">Contact me</span>
         </a>
     </li>
     <li class="responsive-download-resume"><a href="javascript:void(0);" (click)="downloadResume()">Download Resume</a>

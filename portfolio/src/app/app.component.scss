@@ -1,0 +1,39 @@
+.app-container {
+  top: 50px;
+  display: flex;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow-x: hidden;
+  z-index: 1;
+
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.shifted .main-content {
+  transform: translateX(-45px);
+}
+
+.phone-icon-container {
+  position: fixed;
+  /* Fixes the icon in the viewport */
+  top: 75px;
+  /* Distance from the bottom */
+  right: 20px;
+  /* Distance from the right */
+  z-index: 1000;
+  /* Ensures it stays above other elements */
+}
+
+.custom-icon {
+  font-size: 25px;
+  /* Adjust the size as needed */
+}
+
+.hide-icon {
+  display: none;
+}

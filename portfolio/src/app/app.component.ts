@@ -8,5 +8,14 @@ import { NavserviceService } from './shared/services/navservice.service';
 })
 export class AppComponent {
   title = 'portfolio';
-  constructor(private navService: NavserviceService) {}
+  isDrawerOpen = false;
+
+  constructor(private navService: NavserviceService) {
+    this.navService.contactMeModal.subscribe(response=> {
+      this.isDrawerOpen = response
+    })
+  }
+   contactMe() {
+    this.navService.contactMeModal.next(true)
+  }
 }

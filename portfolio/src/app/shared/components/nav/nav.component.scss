@@ -2,9 +2,14 @@
 
 #myTopnav {
   animation: fadeIn 1s ease 0s 1 normal forwards;
+  position: fixed;
+  height: 50px;
+  width: 100vw;
+  z-index: 1000;
 }
 
 ul {
+
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -97,4 +102,20 @@ li a:hover:not(.active) {
   .responsive-download-resume {
     display: block;
   }
+}
+
+.contact-me {
+  cursor: pointer;
+}
+
+.custom-icon {
+  font-size: 20px;
+  /* Adjusts the icon size */
+  width: 20px;
+  /* Sets a specific width */
+  height: 20px;
+}
+
+li.download-resume a:hover:not(.active) {
+  background-color: unset
 }
