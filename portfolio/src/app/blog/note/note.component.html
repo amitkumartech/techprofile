@@ -1,0 +1,7 @@
+<div class="article-list">
+    <br>
+    <h2>{{ article.title }}</h2>
+    <p [innerHTML]="article.content">{{ article.content }}</p>
+    <p>Author: {{ article.author }}</p>
+    <p>Published: {{ article.publishedAt | date }}</p>
+</div>

@@ -1,0 +1,19 @@
+<div class="drawer open" id="drawer">
+    <button class="close-btn" (click)="toggleDrawer()">
+        <ng-container *ngIf="isSideNavOpen; else elseblock;">&times;</ng-container>
+        <ng-template #elseblock>
+            &equiv;
+        </ng-template>
+    </button>
+    <h2>Quick Notes</h2>
+    <ul>
+        <li routerLink="add-note"><a>Add Note</a></li>
+        <li routerLink="all-notes"><a>All Notes</a></li>
+
+        <li><a href="#">About</a></li>
+
+    </ul>
+</div>
+<div class="bdy">
+    <router-outlet></router-outlet>
+</div>

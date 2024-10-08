@@ -18,4 +18,24 @@ export class GithubService {
   getRepositories(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrlRepos);
   }
+
+
+
+  uploadFile() {
+    const apiCreateUrl = 'https://api.github.com/repos/amitkumartech/techprofile/contents/testpath'; // Replace with your GitHub username
+    return this.http.put<any>(apiCreateUrl, {
+      owner: 'OWNER',
+      repo: 'REPO',
+      path: 'PATH',
+      message: 'my commit message',
+      committer: {
+        name: 'Monalisa Octocat',
+        email: 'octocat@github.com'
+      },
+      content: 'bXkgbmV3IGZpbGUgY29udGVudHM=',
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
+    })
+  }
 }

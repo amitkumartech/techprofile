@@ -3,6 +3,7 @@ body {
 }
 
 .drawer {
+    z-index: 1000;
     position: fixed;
     top: 0;
     left: -250px; /* Hide off-screen */
@@ -21,6 +22,14 @@ body {
 
 .drawer.open {
     left: 0; /* Slide in */
+}
+.bdy {
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    // left: -150px;
+}
+.drawer.open + .bdy{
+    transform: translateX(150px); /* Match the drawer width */
 }
 
 .close-btn {
@@ -51,6 +60,7 @@ ul {
 
 ul li {
     margin: 15px 0;
+    cursor: pointer;
 }
 
 ul li a {
