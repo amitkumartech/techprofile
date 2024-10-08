@@ -1,5 +1,8 @@
 .app-container {
-  top: 50px;
+  @media screen and (min-width: 600px) {
+    top: 50px;
+  }
+
   display: flex;
   transition: transform 0.1s ease;
   position: relative;
@@ -10,7 +13,11 @@
 
 .main-content {
   flex: 1;
-  padding: 20px;
+
+  @media screen and (min-width: 600px) {
+    padding: 20px;
+  }
+
   transition: transform 0.1s ease;
 }
 
@@ -282,6 +289,7 @@ body {
 }
 
 @media screen and (min-width: 600px) {
+
   nav,
   ul.menu {
     display: none;
