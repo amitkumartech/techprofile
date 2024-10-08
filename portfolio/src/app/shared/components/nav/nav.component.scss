@@ -6,6 +6,11 @@
   height: 50px;
   width: 100vw;
   z-index: 1000;
+
+  @media screen and (max-width: 600px) {
+    display: none;
+    width: 0px;
+  }
 }
 
 ul {

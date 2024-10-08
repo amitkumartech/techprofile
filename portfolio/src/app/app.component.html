@@ -1,11 +1,41 @@
 <app-nav></app-nav>
-<div class="app-container" [ngClass]="{'shifted': isDrawerOpen}">
+
+<div class="app-container lg-device" [ngClass]="{'shifted': isDrawerOpen}">
     <div class="main-content">
         <router-outlet></router-outlet>
     </div>
     <app-contact-me></app-contact-me>
 
 </div>
+
+<div class="wrapper" [class.open]="isOpen" >
+    <header id="header" class="header">
+        <nav class="menu-navigation">
+            <a href="#" class="menu-icon-toggle" (click)="toggleMobileMenu($event)"><span></span></a>
+            <i class="menu-background top"></i>
+            <i class="menu-background middle"></i>
+            <i class="menu-background bottom"></i>
+            <ul class="menu">
+                <li><a href="#">For Business</a></li>
+                <li><a href="#">For Personal</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="app-container" [ngClass]="{'shifted': isDrawerOpen}">
+            <div class="main-content">
+                <router-outlet></router-outlet>
+            </div>
+            <app-contact-me></app-contact-me>
+
+        </div>
+    </div>
+</div>
+
+
 <!-- <div class="phone-icon-container" [ngClass]="{'hide-icon': isDrawerOpen}">
     <i class="custom-icon" [ngClass]="['fas', 'fa-address-book']" [style.color]="'#1976d2'" (click)="contactMe()"></i>
 

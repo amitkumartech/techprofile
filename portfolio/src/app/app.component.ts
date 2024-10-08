@@ -11,11 +11,16 @@ export class AppComponent {
   isDrawerOpen = false;
 
   constructor(private navService: NavserviceService) {
-    this.navService.contactMeModal.subscribe(response=> {
+    this.navService.contactMeModal.subscribe(response => {
       this.isDrawerOpen = response
     })
   }
-   contactMe() {
+  contactMe() {
     this.navService.contactMeModal.next(true)
+  }
+  
+  isOpen = false;
+  toggleMobileMenu(e: any) {
+    this.isOpen = !this.isOpen;
   }
 }
