@@ -52,10 +52,10 @@ body {
 
 
 @mixin center {
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 600px) {
@@ -67,7 +67,7 @@ body {
     // overflow: hidden;
     border-radius: 3px;
     // background-color: $bermuda;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    // box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4);
   }
 
   .menu-icon-toggle {
@@ -148,9 +148,10 @@ body {
 
   .menu-background {
     visibility: hidden;
-    // width: 300%;
+    width: 300%;  // remove this
     height: 250px;
-    position: absolute;
+    // overflow: hidden;
+    position: fixed;
     left: -130%;
     background-color: $white;
     transition: background-position 0.2s, transform 0.2s 0.2s, visibility 0.2s .3s;
@@ -211,7 +212,7 @@ body {
 
     li {
       opacity: 0;
-      margin-bottom: 5px;
+      margin-bottom: 25px;
       transform: translateX(20px);
       transition: all 0.1s;
       $time-offset-close: 0;
@@ -287,10 +288,11 @@ body {
       transition: all 0.1s;
     }
   }
-  .lg-device & {
+  .lg-device {
     display: none;
     overflow-x: hidden;
   }
+ 
 }
 
 
@@ -301,5 +303,5 @@ body {
     display: none;
   }
 
- 
+
 }

@@ -8,7 +8,7 @@
 
 </div>
 
-<div class="wrapper" [class.open]="isOpen" >
+<div class="wrapper" [class.open]="isOpen">
     <header id="header" class="header">
         <nav class="menu-navigation">
             <a href="#" class="menu-icon-toggle" (click)="toggleMobileMenu($event)"><span></span></a>
@@ -16,12 +16,19 @@
             <i class="menu-background middle"></i>
             <i class="menu-background bottom"></i>
             <ul class="menu">
-                <li><a href="#">For Business</a></li>
-                <li><a href="#">For Personal</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a class="home nav-item" routerLink="/home" [routerLinkActive]="['active']">Home</a></li>
+                <li><a class="techprofile nav-item" routerLink="/techprofile"
+                        [routerLinkActive]="['active']">Profile</a></li>
+                <li><a class="showcasework nav-item" routerLink="/showcasework"
+                        [routerLinkActive]="['active']">Projects</a></li>
+                <li class="nav-right"><a class="home nav-item" routerLink="/blog"
+                        [routerLinkActive]="['active']">Blog</a></li>
+                <li class="responsive-download-resume"><a href="javascript:void(0);" (click)="downloadResume()">Resume
+                        <i class="custom-icon" [ngClass]="['fas', 'fa-file-pdf']" [style.color]="'#1976d2'"></i>
+                    </a>
+
             </ul>
+
         </nav>
     </header>
     <div class="content">
