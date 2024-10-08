@@ -1,0 +1,41 @@
+.drawer {
+  width: 75px;
+  position: fixed;
+  right: -75px;
+  top: 50px;
+  height: 100vh;
+  background: #fff;
+  border-top: solid 1px #fff;
+  box-sizing: border-box;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+}
+
+.drawer.open {
+  right: 0;
+}
+
+.custom-icon {
+  font-size: 25px;
+  /* Adjusts the icon size */
+  width: 25px;
+  /* Sets a specific width */
+  height: 25px;
+  /* Sets a specific height */
+  display: flex;
+  flex-direction: column;
+  /* Ensures the width and height are respected */
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-icon {
+  text-decoration: none;
+}
+
+.contact-options-bottom {
+  position: fixed;
+  top: 75px;
+  padding-left: 20px;
+}

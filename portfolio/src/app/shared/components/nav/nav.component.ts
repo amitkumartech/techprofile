@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { NavserviceService } from '../../services/navservice.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,7 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
-  constructor(private http: HttpClient) {
+  toggleDrawer = false;
+  constructor(private http: HttpClient, private navService: NavserviceService) {
 
   }
   // method to provide the downloading resume facility for the user 
@@ -34,4 +36,17 @@ export class NavComponent {
     }
 
   }
+  // contactMe() {
+  //   this.navService.contactMeModal.next(true)
+  // }
+  closeDrawer() {
+    this.toggleDrawer = !this.toggleDrawer;
+    this.navService.contactMeModal.next(this.toggleDrawer);
+  }
+
+  isOpen = false;
+  toggleMobileMenu(e: any) {
+    this.isOpen = !this.isOpen;
+  }
+
 }

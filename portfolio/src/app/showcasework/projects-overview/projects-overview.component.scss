@@ -1,0 +1,197 @@
+@import url(./../../shared/styles/animations.scss);
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* Prevent scrolling issues */
+  height: 100%;
+  /* Ensure full height */
+}
+
+.container {
+  width: 70%;
+  /* Set width to 70% */
+  margin: 0 auto;
+  /* Center align the container */
+  padding: 20px 0px;
+  box-sizing: border-box;
+  animation: fadeIn 1s ease 0s 1 normal forwards;
+
+  /* Include padding in width calculation */
+  @media (max-width: 768px) {
+    width: 100%;
+
+  }
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.page-header h1 {
+  color: #004b87;
+  /* Facebook dark blue */
+  font-size: 2.5rem;
+  /* Adjust as needed */
+  margin: 0;
+}
+
+.projects-container {
+  // padding: 20px;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 0px;
+  }
+}
+
+.project-card {
+  background: white;
+  border: 1px solid #ddd;
+  /* Add border for card effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Card shadow effect */
+  overflow: hidden;
+  margin-bottom: 20px;
+  /* Space between project cards */
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+  /* Smooth transition for shadow effect */
+}
+
+.accordion-header {
+  background-color: #004b87;
+  /* Facebook dark blue */
+  color: #ffffff;
+  /* White text for better contrast */
+  cursor: pointer;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transition: background-color 0.3s;
+  /* Smooth transition for background color */
+  font-size: 16px;
+  /* Adjust font size if needed */
+  font-weight: bold;
+  /* Make header text bold */
+}
+
+.accordion-header:hover {
+  background-color: #003d6b;
+  /* Darker shade on hover */
+}
+
+.arrow {
+  font-size: 18px;
+  transition: transform 0.3s;
+  /* Smooth transition for arrow rotation */
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: transparent;
+  /* Transparent content background */
+  opacity: 0;
+  padding: 0 20px;
+  /* Horizontal padding */
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  /* Smooth transition for content visibility */
+}
+
+.accordion-content.open {
+  max-height: 500px;
+  /* Adjust based on content size */
+  opacity: 1;
+}
+
+.project-title {
+  color: #ffffff;
+  /* White text color for better visibility */
+  margin: 0;
+  /* Remove default margin */
+}
+
+.role,
+.technologies {
+  color: #004b87;
+  /* Facebook dark blue */
+  margin: 10px 0;
+  /* Space above and below */
+}
+
+.description {
+  margin-bottom: 10px;
+}
+
+.contributions {
+  margin-top: 10px;
+  /* Space above the contributions section */
+}
+
+h3 {
+  background-color: rgb(101, 100, 100);
+  color: #fff;
+  padding: 15px;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.contributions h4 {
+  color: #004b87;
+  /* Facebook dark blue */
+  margin-bottom: 10px;
+  text-align: left;
+  /* Space below the heading */
+}
+
+.contributions ul {
+  list-style-type: disc;
+  /* Disc bullet points */
+  padding-left: 20px;
+  /* Indent list items */
+  margin: 0;
+  /* Remove default margin */
+}
+
+.contributions li {
+  background: none;
+  /* Remove background */
+  border: none;
+  /* Remove border */
+  margin-bottom: 10px;
+  padding: 0;
+  /* Remove padding */
+  color: #333;
+  /* Text color for list items */
+}
+
+
+//
+
+/* Global styles for hiding scrollbars */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  /* Hide scrollbar for the entire page */
+}
+
+/* styles.css or global styles file */
+.highlighted {
+  font-weight: bold;
+}

@@ -1,8 +1,12 @@
-<div *ngIf="loading">
-    <app-loader></app-loader>
+<div *ngIf="loader">
+
+    <svg class="loader" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
+        <circle class="loader-circle" cx="19" cy="19" r="18" stroke-width="2" fill="none" stroke-linecap="round">
+        </circle>
+    </svg>
 </div>
 
-<div class="container_posts" [ngClass]="{ 'content-ready': !loading}">
+<div class="container_posts" *ngIf="!loader" [ngClass]="{'content-ready': !loader}">
     <div class="container-posts__social-posts">
         <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7220029503522111488" height="595"
             width="704" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
