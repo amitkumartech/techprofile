@@ -38,8 +38,6 @@
   display: none;
 }
 
-
-
 $indigo: #536dc8;
 $danube: #6191d1;
 $white: black;
@@ -47,9 +45,7 @@ $bermuda: #77D7B9;
 
 body {
   background-image: linear-gradient(to left, $danube, $indigo);
-  // height: 100vh;
 }
-
 
 @mixin center {
   position: absolute;
@@ -60,14 +56,8 @@ body {
 
 @media screen and (max-width: 600px) {
   .wrapper {
-    // @include center;
-    // width: 100vw;
-    // min-height: 100vh;
     padding: 1em;
-    // overflow: hidden;
     border-radius: 3px;
-    // background-color: $bermuda;
-    // box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4);
   }
 
   .menu-icon-toggle {
@@ -148,9 +138,8 @@ body {
 
   .menu-background {
     visibility: hidden;
-    width: 300%;  // remove this
+    width: 300%;
     height: 250px;
-    // overflow: hidden;
     position: fixed;
     left: -130%;
     background-color: $white;
@@ -275,10 +264,6 @@ body {
   }
 
   .content {
-    // @include center;
-    // width: 100%;
-    // text-align: center;
-    // color: $white;
     transition: all 0.1s .3s;
     height: auto;
 
@@ -288,20 +273,17 @@ body {
       transition: all 0.1s;
     }
   }
+
   .lg-device {
     display: none;
     overflow-x: hidden;
   }
- 
+
 }
 
-
 @media screen and (min-width: 600px) {
-
   nav,
   ul.menu {
     display: none;
   }
-
-
 }
