@@ -3,9 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: 'techprofile', loadChildren: () => import('./techprofile/techprofile.module').then(m => m.TechprofileModule) },
-  { path: 'showcasework', loadChildren: () => import('./showcasework/showcasework.module').then(m => m.ShowcaseworkModule) },
-  { path: 'blog', loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule) },
   {
     path: 'home',
     component: HomeComponent

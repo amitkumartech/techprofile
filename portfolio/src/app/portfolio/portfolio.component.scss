@@ -1,4 +1,4 @@
-@import url(./../../shared/styles/animations.scss);
+@import url(./../shared/styles/animations.scss);
 
 .container {
     margin-left: auto;
@@ -60,6 +60,9 @@ ul {
     &__bio {
         background-color: #ffffff;
         color: rgb(0, 122, 204);
+        &__items {
+           padding-top: 10px;
+        }
     }
 }
 

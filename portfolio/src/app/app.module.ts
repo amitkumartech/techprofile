@@ -9,6 +9,9 @@ import { BuyMeACoffeeComponent } from './buy-me-acoffee/buy-me-acoffee.component
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './shared/components/nav/nav.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ProjectsOverviewComponent } from './projects-overview/projects-overview.component';
+import { HighlightPipe } from './shared/pipes/highlight.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
     HomeComponent,
     NavComponent,
     BuyMeACoffeeComponent,
-    ContactMeComponent
+    ContactMeComponent,
+    PortfolioComponent,
+    ProjectsOverviewComponent,
+    HighlightPipe
   ],
   imports: [
     BrowserModule,

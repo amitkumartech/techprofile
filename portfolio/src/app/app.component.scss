@@ -47,7 +47,7 @@
 
 $indigo: #536dc8;
 $danube: #6191d1;
-$white: black;
+$white: white;
 $bermuda: #77D7B9;
 
 body {
@@ -87,12 +87,12 @@ body {
       height: 2px;
       position: absolute;
       top: 50%;
-      background-color: $white;
+      background-color: rgb(63, 51, 130);;
       transform: translate(0, -50%);
       transition: opacity 0.1s 0.1s;
 
       .home:not(.open) & {
-        background-color: $white;
+        background-color: white
       }
     }
 
@@ -103,7 +103,7 @@ body {
       width: 100%;
       height: 2px;
       position: absolute;
-      background-color: $white;
+      background-color: rgb(63, 51, 130);
       transition: transform 0.1s, top 0.1s 0.1s, bottom 0.1s 0.1s;
     }
 
@@ -149,7 +149,7 @@ body {
     height: 250px;
     position: fixed;
     left: -130%;
-    background-color: $white;
+    background-color: white;
     transition: background-position 0.2s, transform 0.2s 0.2s, visibility 0.2s .3s;
 
     .open & {
@@ -171,7 +171,7 @@ body {
 
     &.middle {
       transform: rotate(-45deg) translateY(50%) scaleY(0);
-      background: $white;
+      background: white;
 
       .open & {
         transform: rotate(-45deg) translateY(50%) scaleY(1);
@@ -294,4 +294,87 @@ body {
   ul.menu {
     display: none;
   }
+}
+
+// drawer css
+
+// body {
+//   font-family: Arial, sans-serif;
+// }
+
+.drawer {
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hide off-screen */
+  width: 250px;
+  height: 100%;
+  margin-top:28px;
+  background-color: white;
+  color: #50c9e1;
+  transition: left 0.3s ease;
+  padding: 20px;
+  // box-shadow: 1px 0 2px rgb(195, 194, 194);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.drawer.open {
+  left: 0; /* Slide in */
+}
+.bdy {
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  // left: -150px;
+}
+.drawer.open + .bdy{
+  transform: translateX(150px); /* Match the drawer width */
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px; /* Size for the close icon */
+  color: #50c9e1;
+  cursor: pointer;
+  position: absolute;
+  top: 5; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+}
+
+.open-btn {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+// h2 {
+//     margin-top: 50px; /* Space for the close button */
+// }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 50px;
+  padding-left: 100px;
+}
+
+ul li {
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+ul li a {
+  color: #50c9e1;
+  text-decoration: none;
+  line-height: 50px;
+ 
+}
+
+.close-btn:hover {
+  opacity: 0.7; /* Change opacity on hover */
 }

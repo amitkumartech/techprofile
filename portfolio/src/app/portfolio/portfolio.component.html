@@ -59,8 +59,8 @@
             <div class="card-body">
                 <div class="row">
                     <h4 class="container__overview__bio">{{ profile.bio }}</h4>
-                    <p>Public Repositories: {{ profile.public_repos }}</p>
-                    <p>
+                    <p class="container__overview__bio__items">Public Repositories: {{ profile.public_repos }}</p>
+                    <p class="container__overview__bio__items">
                         <a href="{{ profile.html_url }}" target="_blank">
                             View my GitHub profile
                             <i [ngClass]="['fas', 'fab fa-github']" [style.color]="getIconColor('#e34c26')"></i>

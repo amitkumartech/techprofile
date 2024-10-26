@@ -8,15 +8,15 @@ import { NavserviceService } from '../shared/services/navservice.service';
 })
 export class ContactMeComponent {
   // isModalOpen = false;
-  isDrawerOpen = true;
+  isContactDrawerOpen = true;
 
   constructor(private navService: NavserviceService) {
     this.navService.contactMeModal.subscribe((response: Boolean) => {
       if (response) {
-        this.isDrawerOpen = true;
+        this.isContactDrawerOpen = true;
       }
       else {
-        this.isDrawerOpen = false;
+        this.isContactDrawerOpen = false;
       }
     })
   }

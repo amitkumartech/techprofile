@@ -11,6 +11,8 @@
     display: none;
     width: 0px;
   }
+  // box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.3);
+
 }
 
 ul {
@@ -19,7 +21,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: white;
 }
 
 li {
@@ -32,14 +34,15 @@ li {
 
 li a {
   display: block;
-  color: white;
+  color: grey;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+  opacity: .65;
 }
 
 .active {

@@ -44,9 +44,4 @@ export class NavComponent {
     this.navService.contactMeModal.next(this.toggleDrawer);
   }
 
-  isOpen = false;
-  toggleMobileMenu(e: any) {
-    this.isOpen = !this.isOpen;
-  }
-
 }

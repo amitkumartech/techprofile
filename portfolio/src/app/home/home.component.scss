@@ -34,6 +34,7 @@ p {
     max-width: 960px;
     flex-direction: column;
     align-items: center;
+    font-size: 12px;
 }
 
 svg.material-icons {
@@ -79,7 +80,7 @@ svg.material-icons:not(:last-child) {
 }
 
 .card.card-small {
-    height: 16px;
+    // height: 16px;
     width: 168px;
 }
 
@@ -97,8 +98,14 @@ svg.material-icons:not(:last-child) {
 }
 
 .card.highlight-card {
-    background-color: #1976d2;
-    color: white;
+    background-color: white;
+    background-color: white;
+    font-family: Rubik, sans-serif;
+    font-size: 32px;
+    line-height: 32px;
+    color: #1976d2;
+    font-weight: 600;
+    color: #1976d2;
     font-weight: 600;
     border: none;
     width: auto;
@@ -121,13 +128,6 @@ img#profile-image {
     border-radius: 50%;
 }
 
-svg#rocket-smoke {
-    height: calc(100vh - 95px);
-    position: absolute;
-    top: 10px;
-    right: 180px;
-    z-index: -10;
-}
 
 a,
 a:visited,
@@ -280,6 +280,34 @@ svg#clouds {
     height: 100%;
     object-fit: cover;
 }
+.home-hero-heading {
+    background: linear-gradient(0deg, #79b4e1 20%, rgba(68, 86, 96, 0) 45%), linear-gradient(90deg, #4285d8 0%, #006adc 33.333%, #f6383e 50%, #1ca3f2 100%);
+    background-size: 300% 100%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-animation: intro-gradient 1.8s ease backwards;
+    animation: intro-gradient 1.8s ease backwards;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+    text-transform: uppercase;
+}
+.home-hero-heading {
+    font-family: 'Changa One', Impact, sans-serif;
+    max-width: 830px;
+    font-size: 75px;
+    @media screen and (max-width: 767px) {
+        font-size: 30px;
+
+    }
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -.035em;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 ul {
     list-style-type: circle;
@@ -287,8 +315,21 @@ ul {
 
 .about-text-container {
     animation: fadeIn 1s ease 0s 1 normal forwards;
+
+    div,
+    ul li {
+        font-size: 24px;
+        letter-spacing: 0;
+        font-family: Figtree, sans-serif;
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 140%;
+        color: #3c2f56;
+    }
+    margin-bottom: 20px;
 }
 
 .about-text {
     margin-top: 40px;
+
 }

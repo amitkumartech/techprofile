@@ -1,4 +1,4 @@
-@import url(./../../shared/styles/animations.scss);
+@import url(./../shared/styles/animations.scss);
 
 html,
 body {
@@ -12,6 +12,7 @@ body {
 
 .container {
   width: 70%;
+  max-width: 960px;
   /* Set width to 70% */
   margin: 0 auto;
   /* Center align the container */
@@ -63,9 +64,9 @@ body {
 }
 
 .accordion-header {
-  background-color: #004b87;
+  background-color: white;
   /* Facebook dark blue */
-  color: #ffffff;
+  color: #493895;
   /* White text for better contrast */
   cursor: pointer;
   padding: 15px;
@@ -82,7 +83,7 @@ body {
 }
 
 .accordion-header:hover {
-  background-color: #003d6b;
+  // background-color: #003d6b;
   /* Darker shade on hover */
 }
 
@@ -115,7 +116,7 @@ body {
 }
 
 .project-title {
-  color: #ffffff;
+  color: #004b87;;
   /* White text color for better visibility */
   margin: 0;
   /* Remove default margin */

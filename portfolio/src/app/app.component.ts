@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { NavserviceService } from './shared/services/navservice.service';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'portfolio';
-  isDrawerOpen = false;
+  isContactDrawerOpen = false;
+  isSideNavOpen = false;
 
-  constructor(private navService: NavserviceService, private http: HttpClient) {
+  constructor(private navService: NavserviceService, private http: HttpClient, private router: Router,
+    private route: ActivatedRoute) {
     this.navService.contactMeModal.subscribe(response => {
-      this.isDrawerOpen = response
+      this.isContactDrawerOpen = response
     })
   }
   contactMe() {
@@ -33,8 +36,8 @@ export class AppComponent {
     }
   }
 
-   // method to provide the downloading resume facility for the user 
-   downloadResume() {
+  // method to provide the downloading resume facility for the user 
+  downloadResume() {
     console.log("Download resume!")
     const resumeUrl = '/techprofile/assets/amit-kumar-resume.pdf'
     this.http.get(resumeUrl, { responseType: 'blob' }).subscribe(blob => {
@@ -45,4 +48,18 @@ export class AppComponent {
       window.URL.revokeObjectURL(link.href);
     });
   }
+
+
+  toggleDrawer() {
+    const drawer = document.getElementById('drawer');
+    drawer?.classList.toggle('open');
+    this.isSideNavOpen = !this.isSideNavOpen
+  }
+
+  scrollToSection(sec: string) {
+    console.log("scroll")
+    // if (sec && sec.length > 0 && sec != null)
+      document.getElementById(sec)?.scrollIntoView({ behavior: "smooth" });
+  }
+
 }

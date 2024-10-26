@@ -1,13 +1,5 @@
 <app-nav></app-nav>
 
-<div class="app-container lg-device" [ngClass]="{'shifted': isDrawerOpen}">
-    <div class="main-content">
-        <router-outlet></router-outlet>
-    </div>
-    <app-contact-me></app-contact-me>
-
-</div>
-
 <div class="wrapper" [class.open]="isOpen">
     <header id="header" class="header">
         <nav class="menu-navigation">
@@ -16,34 +8,70 @@
             <i class="menu-background middle"></i>
             <i class="menu-background bottom"></i>
             <ul class="menu">
-                <li><a class="home nav-item" routerLink="/home" [routerLinkActive]="['active']">Home</a></li>
-                <li><a class="techprofile nav-item" routerLink="/techprofile"
-                        [routerLinkActive]="['active']">Profile</a></li>
-                <li><a class="showcasework nav-item" routerLink="/showcasework"
-                        [routerLinkActive]="['active']">Projects</a></li>
-                <li class="nav-right"><a class="home nav-item" routerLink="/blog"
-                        [routerLinkActive]="['active']">Blog</a></li>
-                <li class="responsive-download-resume"><a href="javascript:void(0);" (click)="downloadResume()">Resume
-                        <i class="custom-icon" [ngClass]="['fas', 'fa-file-pdf']" [style.color]="'#1976d2'"></i>
+                <li>
+                    <a href="mailto:verma.amit0407@gmail.com" class="contact-icon">
+                        <i class="custom-icon" [ngClass]="['fas', 'fa-envelope']" [style.color]="'#1976d2'"></i>
+                        Mail 
                     </a>
+                </li>
+                <li>
+                    <a href="tel:+919172575975" class="contact-icon">
+                        <i class="custom-icon" [ngClass]="['fas', 'fa-phone']" [style.color]="'#4caf50'"></i>
+                        Call
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.me/9172575975" class="contact-icon last-item">
+                        <i class="custom-icon" [ngClass]="['fab', 'fa-whatsapp']" [style.color]="'#25D366'"></i>
+                        Chat
+                    </a>
+                </li>
+                <li class="responsive-download-resume"><a href="javascript:void(0);" (click)="downloadResume()">
+                        <i class="custom-icon" [ngClass]="['fas', 'fa-file-pdf']" [style.color]="'#1976d2'"></i>
+                        Resume
+                    </a>
+                </li>
+
 
             </ul>
 
         </nav>
     </header>
     <div class="content">
-        <div class="app-container" [ngClass]="{'shifted': isDrawerOpen}">
+        <div class="app-container" [ngClass]="{'shifted': isContactDrawerOpen}">
             <div class="main-content">
-                <router-outlet></router-outlet>
+                <div class="drawer" id="drawer">
+                    <button class="close-btn" (click)="toggleDrawer()">
+                        <ng-container *ngIf="isSideNavOpen; else elseblock;">&times;</ng-container>
+                        <ng-template #elseblock>
+                            &equiv;
+                        </ng-template>
+                    </button>
+                    <ul>
+                        <li>
+                            <a href="mailto:verma.amit0407@gmail.com" class="contact-icon">
+                                <i class="custom-icon" [ngClass]="['fas', 'fa-envelope']" [style.color]="'#1976d2'"></i>
+                                Mail 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+919172575975" class="contact-icon">
+                                <i class="custom-icon" [ngClass]="['fas', 'fa-phone']" [style.color]="'#4caf50'"></i>
+                                Call
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/9172575975" class="contact-icon last-item">
+                                <i class="custom-icon" [ngClass]="['fab', 'fa-whatsapp']" [style.color]="'#25D366'"></i>
+                                Chat
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bdy">
+                    <router-outlet></router-outlet>
+                </div>
             </div>
-            <app-contact-me></app-contact-me>
-
         </div>
     </div>
 </div>
-
-
-<!-- <div class="phone-icon-container" [ngClass]="{'hide-icon': isDrawerOpen}">
-    <i class="custom-icon" [ngClass]="['fas', 'fa-address-book']" [style.color]="'#1976d2'" (click)="contactMe()"></i>
-
-</div> -->
