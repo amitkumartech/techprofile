@@ -222,3 +222,179 @@ h2 {
         stroke-dashoffset: 75.4;
     }
 }
+.skills-container {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+    // max-width: 600px; /* Adjusts the container width for desktop view */
+    border-radius: 8px;
+    // margin: 0 auto;
+    padding: 20px 0px;
+  }
+  
+  .skills-container h2 {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0 0 10px;
+  }
+  
+  .skills-container p {
+    font-size: 14px;
+    margin: 0 0 20px;
+    color: #194fa1;
+  }
+  
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .skill {
+    flex: 1 1 100%;
+    margin-bottom: 15px;
+  }
+  
+  .skill-name {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  
+  .skill-level {
+    float: right;
+    font-size: 16px;
+  }
+  
+  .progress-bar {
+    background-color: #ccc;
+    height: 5px;
+    border-radius: 3px;
+    margin-top: 5px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #194fa1;
+    border-radius: 3px;
+  }
+  
+  /* Media Query for Desktop (Two Columns) */
+  @media (min-width: 768px) {
+    .skills-grid {
+      gap: 20px;
+    }
+    
+    .skill {
+      flex: 1 1 45%; /* Each skill item takes 45% width for two columns */
+      margin-bottom: 20px;
+    }
+  
+    /* Ensures the last item stays at half-width even if the item count is odd */
+    .skill:nth-child(odd):last-child {
+      flex: 1 1 45%;
+    }
+  }
+  
+  .skill-name-container {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    max-width: 800px; /* Maintain max width */
+    margin: 0 auto; /* Center container */
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-name-container h2 {
+    font-size: 24px; /* Base font size */
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Skill grid layout */
+.skill-name-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap */
+    gap: 10px; /* Space between items */
+    justify-content: center; /* Center the items */
+    z-index: 1; /* Ensure skills are above background circles */
+    position: relative;
+}
+
+/* Skill item styling */
+.skill-name-item {
+    background-color: #194fa1; /* Blue background */
+    color: #ffffff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px; /* Base font size */
+    font-weight: 500;
+    display: inline-block;
+    min-width: 120px; /* Minimum width for items */
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    flex: 1 1 150px; /* Make items flexible with a base width of 150px */
+    max-width: 200px; /* Limit the maximum width of items */
+}
+
+/* Hover effect */
+.skill-name-item:hover {
+    cursor: pointer;
+}
+
+/* Background Circle Effect */
+.skill-name-container::before,
+.skill-name-container::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+/* Randomized Circle Positions and Sizes */
+.skill-name-container::before {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -100px;
+}
+
+.skill-name-container::after {
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+    right: -50px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .skill-name-container h2 {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    .skill-name-item {
+        font-size: 12px; /* Adjust font size for smaller screens */
+        padding: 6px 12px; /* Adjust padding */
+        flex: 1 1 calc(50% - 10px); /* Allow two items per row, accounting for gap */
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-name-container {
+        padding: 15px; /* Reduce padding */
+    }
+
+    .skill-name-container h2 {
+        font-size: 18px; /* Smaller font size */
+    }
+
+    .skill-name-item {
+        font-size: 10px; /* Even smaller font size */
+        padding: 5px 10px; /* Further reduced padding */
+        flex: 1 1 calc(33% - 10px); /* Allow three items per row, accounting for gap */
+    }
+}
+

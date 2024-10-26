@@ -15,13 +15,98 @@
                 </div>
             </div>
             <div class="card-body">
-                <div class="row">
-                    <span *ngFor="let skill of skills" class="skills">
-                        <span class="skills__skill-item">
-                            {{skill}}
-                        </span>
-                    </span>
+
+
+                <div>
+                    <div class="skills-container">
+                        <!-- <h2>My Skills</h2> -->
+                        <!-- <p>JavaScript . TypeScript . Angular . Micro Frontend . Nx Monorepo . Optimization</p> -->
+
+                        <div class="skills-grid">
+                            <div class="skill">
+                                <span class="skill-name">JavaScript & TypeScript</span>
+                                <span class="skill-level">85%</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 85%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <span class="skill-name">Angular, React & Svelte</span>
+                                <span class="skill-level">90%</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 90%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <span class="skill-name">Micro Frontend Architecture</span>
+                                <span class="skill-level">88%</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 88%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <span class="skill-name">Nx Monorepo & Modular Development</span>
+                                <span class="skill-level">82%</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 82%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <span class="skill-name">Responsive & Performance Optimization</span>
+                                <span class="skill-level">80%</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 80%;"></div>
+                                </div>
+                            </div>
+
+
+                            <div class="skill">
+                                <span class="skill-name"> HTML5 & CSS3</span>
+                                <span class="skill-level">85%</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 85%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <span class="skill-name">Version Control (Git, Bitbucket, SVN)</span>
+                                <span class="skill-level">85%</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 85%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <span class="skill-name">Testing & Debugging</span>
+                                <span class="skill-level">82%</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 82%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h5>Other Skills</h5>
+                        <p style="font-size: 16px; text-align: justify;">{{skills}}</p>
+
+                    </div>
+
                 </div>
+
+                <!-- <div class="row">
+                    <div class="skill-name-container">
+                        <h2>My Skills</h2>
+                        <div class="skill-name-grid">
+                          <span *ngFor="let skill of skills" class="skill-name-item">
+                            {{ skill }}
+                          </span>
+                        </div>
+                      </div>
+                </div> -->
+
+
             </div>
         </div>
     </div>

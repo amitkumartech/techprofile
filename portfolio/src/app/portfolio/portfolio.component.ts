@@ -29,7 +29,13 @@ export class PortfolioComponent {
     // Add more color mappings as needed
   };
   iconSizeClass = 'fa-2x'; // FontAwesome size class (3x for example)
-  skills = skills.split(', ');
+  // skills = skills.split(', ');
+  skills = skills;
+
+  // skills: string[] = ['Angular', 'React', 'Svelte', 'JavaScript'];
+  additionalSkills: string[] = ['TypeScript', 'HTML', 'CSS', 'RxJS', 'Node.js'];
+
+
   constructor(private githubService: GithubService) { }
 
   ngOnInit(): void {
